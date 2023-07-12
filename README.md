@@ -19,6 +19,10 @@ pip install pyresponse
 
 PyResponse can be used with different web frameworks, including Django, FastAPI, and Flask. Here's how you can use PyResponse in each framework:
 
+### # Example usage
+
+status_code = HTTPStatus.OK # or status_code = 200
+
 ### Django
 
 1. Install PyResponse using pip as shown in the installation section.
