@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Pyresponse',
-    version='0.1.0',
+    version='0.1.1',
     description='Package for creating success and error responses in Python Projects',
     author='Ibrahim Oluwapeluwa',
     author_email='ipeluwa@gmail.com',
