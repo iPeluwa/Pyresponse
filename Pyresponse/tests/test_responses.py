@@ -3,8 +3,8 @@ Unit tests for response module in PyResponse package.
 """
 
 import unittest
-from Pyresponse.response import create_success_response, create_error_response
-from Pyresponse.logging import configure_logging
+from pyresponse.response import create_success_response, create_error_response
+from pyresponse.logging import configure_logging
 
 
 class ResponseFunctionsTestCase(unittest.TestCase):
