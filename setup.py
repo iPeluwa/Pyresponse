@@ -12,8 +12,6 @@ setup(
     author_email='ipeluwa@gmail.com',
     packages=find_packages(),
     install_requires=[
-        'Django',
-        'djangorestframework',
         'rollbar',
         'sentry-sdk',
         'python-dotenv',
