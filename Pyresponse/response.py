@@ -7,9 +7,9 @@ from typing import Any
 
 
 class Response:
-    def __init__(self, data: Any, status_code: int):
+    def __init__(self, data: Any, status: int):
         self.data = data
-        self.status_code = status_code
+        self.status_code = status
 
 
 def create_success_response(data=None, message=None, status_code=None, serializer=None, **kwargs):

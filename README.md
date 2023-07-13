@@ -23,6 +23,48 @@ PyResponse can be used with different web frameworks, including Django, FastAPI,
 
 status_code = HTTPStatus.OK # or status_code = 200
 
+### Vanilla Python
+
+```python
+from pyresponse.response import create_success_response, create_error_response
+
+
+def main():
+    # Example usage of PyResponse
+    name = input("Enter your name: ")
+    age = input("Enter your age: ")
+
+    try:
+        age = int(age)
+        if age >= 18:
+            message = "Success"
+            data = {'name': name, 'age': age}
+            success_response = create_success_response(
+                data=data, message=message, status_code=200)
+            print(success_response.data)  # Access the response data
+            # Access the response status code
+            print(success_response.status_code)
+        else:
+            message = "Error: Age must be 18 or older."
+            error_response = create_error_response(
+                message=message, status_code=400)
+            print(error_response.data)  # Access the response data
+            # Access the response status code
+            print(error_response.status_code)
+
+    except ValueError:
+        message = "Error: Invalid age entered."
+        error_response = create_error_response(
+            message=message, status_code=400)
+        print(error_response.data)  # Access the response data
+        print(error_response.status_code)  # Access the response status code
+
+
+if __name__ == '__main__':
+    main()
+
+```
+
 ### Django
 
 1. Install PyResponse using pip as shown in the installation section.
@@ -30,7 +72,7 @@ status_code = HTTPStatus.OK # or status_code = 200
 3. Use the `create_success_response()` and `create_error_response()` functions to generate the desired responses.
 
 ```python
-from pyresponse import create_success_response, create_error_response
+from pyresponse.response import create_success_response, create_error_response
 
 def my_view(request):
     # Process the request and generate the necessary data
@@ -63,7 +105,7 @@ def my_api_view(request):
 
 ```python
 from fastapi import FastAPI
-from pyresponse import create_success_response, create_error_response
+from pyresponse.response import create_success_response, create_error_response
 
 app = FastAPI()
 
@@ -87,7 +129,7 @@ def error():
 
 ## Flask
 
-1. Install PyResponse using pip as shown in the installation section.
+1. Install PyResponse.response using pip as shown in the installation section.
 2. Import the necessary functions from PyResponse in your Flask routes.
 3. Use the `create_success_response()` and `create_error_response()` functions to generate the desired responses.
 
@@ -152,7 +194,7 @@ success = fields.Boolean()
 message = fields.String()
 data = fields.Dict()
 
-# Example usage.
+# Example usage
 
 serializer = MySchema()
 response = create_success_response(data={'foo': 'bar'}, message='Success', serializer=serializer)

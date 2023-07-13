@@ -1,13 +1,14 @@
-"""
-Setup script for PyResponse package.
-"""
-
 from setuptools import setup, find_packages
 
+with open('README.md', 'r', encoding='utf-8') as f:
+    readme_content = f.read()
+
 setup(
-    name='Pyresponse',
+    name='pyresponse',
     version='0.1.1',
     description='Package for creating success and error responses in Python Projects',
+    long_description=readme_content,
+    long_description_content_type='text/markdown',
     author='Ibrahim Oluwapeluwa',
     author_email='ipeluwa@gmail.com',
     packages=find_packages(),
@@ -26,5 +27,8 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+
     ],
 )
