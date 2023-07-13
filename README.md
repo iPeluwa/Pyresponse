@@ -152,7 +152,7 @@ success = fields.Boolean()
 message = fields.String()
 data = fields.Dict()
 
-# Example usage
+# Example usage.
 
 serializer = MySchema()
 response = create_success_response(data={'foo': 'bar'}, message='Success', serializer=serializer)
